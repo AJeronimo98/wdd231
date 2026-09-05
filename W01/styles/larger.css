@@ -1,0 +1,47 @@
+@media screen and (min-width: 700px) {
+    .header-content {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        border: none;
+        padding: 1rem 1.5rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .student-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .course-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
