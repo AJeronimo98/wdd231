@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore the Oaxaca de Juárez Chamber of Commerce business directory and discover local businesses, services, and organizations.">
+
+    <meta name="author"
+        content="Angel Gael Jeronimo">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title"
+        content="Oaxaca de Juárez Chamber of Commerce">
+
+    <meta property="og:description"
+        content="Discover local businesses and organizations in Oaxaca de Juárez through the Chamber of Commerce directory.">
+
+    <meta property="og:image"
+    content="https://AJeronimo98.github.io/wdd231/chamber/images/business1.jpg">
+
+    <meta property="og:url"
+    content="https://AJeronimo98.github.io/wdd231/chamber/directory.html">
+
+    <meta property="og:type"
+        content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <title>Oaxaca de Juárez Chamber of Commerce | Directory</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-container">
+
+            <a class="brand" href="index.html">
+                <img src="images/favicon.svg"
+                    alt="Oaxaca Chamber of Commerce logo"
+                    width="60"
+                    height="60">
+
+                <div class="brand-text">
+                    <span class="site-name">Oaxaca de Juárez</span>
+                    <span class="site-subtitle">Chamber of Commerce</span>
+                </div>
+            </a>
+
+            <button
+                id="menu-button"
+                class="menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navigation">
+                ☰
+            </button>
+
+        </div>
+
+        <nav id="navigation" class="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="directory.html" class="active">
+                Directory
+            </a>
+
+            <a href="join.html">
+                Join
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-heading">
+
+            <p class="eyebrow">LOCAL BUSINESS COMMUNITY</p>
+
+            <h1>Business Directory</h1>
+
+            <p>
+                Discover businesses and organizations that help
+                Oaxaca de Juárez grow.
+            </p>
+
+        </section>
+
+
+        <section class="directory-controls">
+
+            <h2>Our Members</h2>
+
+            <div class="view-buttons">
+
+                <button
+                    id="grid-button"
+                    class="view-button active-button"
+                    type="button"
+                    aria-label="Display businesses in grid view">
+                    Grid
+                </button>
+
+                <button
+                    id="list-button"
+                    class="view-button"
+                    type="button"
+                    aria-label="Display businesses in list view">
+                    List
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="members"
+            class="members grid"
+            aria-label="Chamber of Commerce members">
+
+            <p class="loading">
+                Loading business directory...
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-container">
+
+            <section class="footer-column">
+
+                <h2>
+                    Oaxaca de Juárez
+                </h2>
+
+                <p>
+                    Chamber of Commerce
+                </p>
+
+                <p>
+                    Supporting local businesses and
+                    strengthening our community.
+                </p>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h2>
+                    Contact
+                </h2>
+
+                <p>
+                    Centro Histórico
+                </p>
+
+                <p>
+                    Oaxaca de Juárez, Oaxaca
+                </p>
+
+                <p>
+                    Mexico, C.P. 68000
+                </p>
+
+                <p>
+                    Email:
+                    info@oaxacachamber.example
+                </p>
+
+                <p>
+                    Phone:
+                    +52 951 000 0000
+                </p>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h2>
+                    Development
+                </h2>
+
+                <p>
+                    WDD 231
+                </p>
+
+                <p>
+                    © <span id="currentyear"></span>
+                    Oaxaca de Juárez Chamber of Commerce
+                </p>
+
+                <p>
+                    Last Modification:
+                </p>
+
+                <p id="lastmodified">
+                    Loading...
+                </p>
+
+            </section>
+
+        </div>
+
+    </footer>
+
+
+    <script src="scripts/directory.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{
+    "members": [
+        {
+            "name": "Café Antequera",
+            "address": "Calle Macedonio Alcalá 101, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1001",
+            "website": "https://example.com/cafe-antequera",
+            "image": "business1.jpg",
+            "membership": 3,
+            "description": "A local coffee shop inspired by the traditions and flavors of Oaxaca."
+        },
+        {
+            "name": "Barro & Tradición",
+            "address": "Calle Miguel Hidalgo 205, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1002",
+            "website": "https://example.com/barro-tradicion",
+            "image": "business2.jpg",
+            "membership": 2,
+            "description": "A business dedicated to traditional crafts and the beauty of Oaxacan pottery."
+        },
+        {
+            "name": "Sabores del Valle",
+            "address": "Calle de la Reforma 310, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1003",
+            "website": "https://example.com/sabores-del-valle",
+            "image": "business3.jpg",
+            "membership": 3,
+            "description": "A restaurant celebrating traditional Oaxacan cuisine and local ingredients."
+        },
+        {
+            "name": "Arte Zapoteco",
+            "address": "Calle Porfirio Díaz 415, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1004",
+            "website": "https://example.com/arte-zapoteco",
+            "image": "business4.jpg",
+            "membership": 2,
+            "description": "A creative business showcasing handmade art, colorful designs, and regional traditions."
+        },
+        {
+            "name": "Casa Verde Hotel",
+            "address": "Calle Fiallo 520, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1005",
+            "website": "https://example.com/casa-verde-hotel",
+            "image": "business5.jpg",
+            "membership": 3,
+            "description": "A welcoming hotel inspired by Oaxaca's colonial architecture and local culture."
+        },
+        {
+            "name": "Oaxaca Adventures",
+            "address": "Calzada de la República 180, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1006",
+            "website": "https://example.com/oaxaca-adventures",
+            "image": "business6.jpg",
+            "membership": 2,
+            "description": "A tourism company offering cultural and outdoor experiences around Oaxaca."
+        },
+        {
+            "name": "Oaxaca Digital",
+            "address": "Calle Morelos 630, Centro, Oaxaca de Juárez, Oaxaca",
+            "phone": "+52 951 000 1007",
+            "website": "https://example.com/oaxaca-digital",
+            "image": "business7.jpg",
+            "membership": 1,
+            "description": "A technology company helping local businesses improve their digital presence."
+        }
+    ]
+}
