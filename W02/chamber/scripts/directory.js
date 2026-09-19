@@ -4,14 +4,23 @@
 
 
 /* ========================================
-   SELECT HTML ELEMENTS
+   SELECT ELEMENTS
 ======================================== */
 
-const membersContainer = document.querySelector("#members");
-const gridButton = document.querySelector("#grid-button");
-const listButton = document.querySelector("#list-button");
-const menuButton = document.querySelector("#menu-button");
-const navigation = document.querySelector("#navigation");
+const membersContainer =
+    document.querySelector("#members");
+
+const gridButton =
+    document.querySelector("#grid-button");
+
+const listButton =
+    document.querySelector("#list-button");
+
+const menuButton =
+    document.querySelector("#menu-button");
+
+const navigation =
+    document.querySelector("#navigation");
 
 
 /* ========================================
@@ -38,7 +47,9 @@ if (menuButton && navigation) {
         );
 
         menuButton.textContent =
-            isOpen ? "✕" : "☰";
+            isOpen
+                ? "✕"
+                : "☰";
 
     });
 
@@ -46,7 +57,7 @@ if (menuButton && navigation) {
 
 
 /* ========================================
-   GET MEMBERS FROM JSON
+   GET MEMBERS
 ======================================== */
 
 async function getMembers() {
@@ -69,7 +80,9 @@ async function getMembers() {
 
         displayMembers(data.members);
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
             "Error loading member data:",
@@ -101,7 +114,9 @@ function displayMembers(members) {
         const card =
             document.createElement("article");
 
-        card.className = "member-card";
+        card.className =
+            "member-card";
+
 
         card.innerHTML = `
 
@@ -114,42 +129,62 @@ function displayMembers(members) {
                 height="400"
             >
 
+
             <div class="member-info">
 
                 <h3>
                     ${member.name}
                 </h3>
 
+
                 <p class="member-description">
                     ${member.description}
                 </p>
 
-                <p class="member-detail">
-                    <strong>Address:</strong>
-                    ${member.address}
-                </p>
 
                 <p class="member-detail">
-                    <strong>Phone:</strong>
-                    ${member.phone}
+
+                    <strong>
+                        Address:
+                    </strong>
+
+                    ${member.address}
+
                 </p>
+
+
+                <p class="member-detail">
+
+                    <strong>
+                        Phone:
+                    </strong>
+
+                    ${member.phone}
+
+                </p>
+
 
                 <span class="membership ${getMembershipClass(member.membership)}">
+
                     ${getMembershipName(member.membership)}
+
                 </span>
+
 
                 <a
                     class="website-link"
                     href="${member.website}"
                     target="_blank"
-                    rel="noopener noreferrer"
-                >
+                    rel="noopener noreferrer">
+
                     Visit Website
+
                 </a>
 
             </div>
 
         `;
+
 
         membersContainer.appendChild(card);
 
@@ -172,7 +207,6 @@ function getMembershipName(level) {
         case 2:
             return "Silver Member";
 
-        case 1:
         default:
             return "Member";
 
@@ -182,7 +216,7 @@ function getMembershipName(level) {
 
 
 /* ========================================
-   MEMBERSHIP CSS CLASS
+   MEMBERSHIP CLASS
 ======================================== */
 
 function getMembershipClass(level) {
@@ -195,7 +229,6 @@ function getMembershipClass(level) {
         case 2:
             return "silver";
 
-        case 1:
         default:
             return "member";
 
@@ -205,79 +238,85 @@ function getMembershipClass(level) {
 
 
 /* ========================================
-   GRID VIEW
+   GRID BUTTON
 ======================================== */
 
-if (gridButton) {
+gridButton.addEventListener(
+    "click",
+    () => {
 
-    gridButton.addEventListener("click", () => {
+        membersContainer.classList.remove(
+            "list"
+        );
 
-        membersContainer.classList.remove("list");
-        membersContainer.classList.add("grid");
+        membersContainer.classList.add(
+            "grid"
+        );
 
-        gridButton.classList.add("active-button");
-        listButton.classList.remove("active-button");
 
-    });
+        gridButton.classList.add(
+            "active-button"
+        );
 
-}
+        listButton.classList.remove(
+            "active-button"
+        );
+
+    }
+);
 
 
 /* ========================================
-   LIST VIEW
+   LIST BUTTON
 ======================================== */
 
-if (listButton) {
+listButton.addEventListener(
+    "click",
+    () => {
 
-    listButton.addEventListener("click", () => {
+        membersContainer.classList.remove(
+            "grid"
+        );
 
-        membersContainer.classList.remove("grid");
-        membersContainer.classList.add("list");
+        membersContainer.classList.add(
+            "list"
+        );
 
-        listButton.classList.add("active-button");
-        gridButton.classList.remove("active-button");
 
-    });
+        listButton.classList.add(
+            "active-button"
+        );
 
-}
+        gridButton.classList.remove(
+            "active-button"
+        );
+
+    }
+);
 
 
 /* ========================================
-   CURRENT YEAR
+   FOOTER YEAR
 ======================================== */
 
-const currentYear =
-    document.querySelector("#currentyear");
-
-if (currentYear) {
-
-    currentYear.textContent =
-        new Date().getFullYear();
-
-}
+document.querySelector(
+    "#currentyear"
+).textContent =
+    new Date().getFullYear();
 
 
 /* ========================================
    LAST MODIFIED
 ======================================== */
 
-const lastModified =
-    document.querySelector("#lastmodified");
-
-if (lastModified) {
-
-    lastModified.textContent =
-        document.lastModified;
-
-}
+document.querySelector(
+    "#lastmodified"
+).textContent =
+    document.lastModified;
 
 
 /* ========================================
    LOAD DIRECTORY
 ======================================== */
 
-if (membersContainer) {
-
-    getMembers();
-
-}
+getMembers();

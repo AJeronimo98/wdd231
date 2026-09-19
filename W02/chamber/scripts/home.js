@@ -4,7 +4,7 @@
 
 
 /* ========================================
-   SELECT HTML ELEMENTS
+   SELECT ELEMENTS
 ======================================== */
 
 const menuButton =
@@ -81,14 +81,23 @@ if (lastModified) {
    OPENWEATHERMAP
 ======================================== */
 
+/*
+   IMPORTANT:
+   Replace the value below with your
+   OpenWeatherMap API key.
+*/
+
 const API_KEY =
-    "bc004250ecec324b4a7670a1a00965df";
+    "YOUR_API_KEY";
+
 
 const CITY =
     "Oaxaca de Juarez";
 
-const WEATHER_URL =
+
+const CURRENT_WEATHER_URL =
     `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=metric&lang=en`;
+
 
 const FORECAST_URL =
     `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=metric&lang=en`;
@@ -100,31 +109,18 @@ const FORECAST_URL =
 
 async function getCurrentWeather() {
 
-    try {
+    const response =
+        await fetch(CURRENT_WEATHER_URL);
 
-        const response =
-            await fetch(WEATHER_URL);
+    if (!response.ok) {
 
-        if (!response.ok) {
-
-            throw new Error(
-                `Current weather error: ${response.status}`
-            );
-
-        }
-
-        return await response.json();
-
-    } catch (error) {
-
-        console.error(
-            "Error loading current weather:",
-            error
+        throw new Error(
+            `Current weather error: ${response.status}`
         );
 
-        throw error;
-
     }
+
+    return await response.json();
 
 }
 
@@ -135,31 +131,18 @@ async function getCurrentWeather() {
 
 async function getForecast() {
 
-    try {
+    const response =
+        await fetch(FORECAST_URL);
 
-        const response =
-            await fetch(FORECAST_URL);
+    if (!response.ok) {
 
-        if (!response.ok) {
-
-            throw new Error(
-                `Forecast error: ${response.status}`
-            );
-
-        }
-
-        return await response.json();
-
-    } catch (error) {
-
-        console.error(
-            "Error loading forecast:",
-            error
+        throw new Error(
+            `Forecast error: ${response.status}`
         );
 
-        throw error;
-
     }
+
+    return await response.json();
 
 }
 
@@ -179,25 +162,26 @@ async function displayWeather() {
             await getForecast();
 
 
-        /* CURRENT WEATHER */
-
         const temperature =
             Math.round(current.main.temp);
+
 
         const description =
             current.weather[0].description;
 
+
         const iconCode =
             current.weather[0].icon;
+
 
         const iconURL =
             `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
 
-        /* THREE-DAY FORECAST */
-
-        const threeDays =
-            getThreeDayForecast(forecast.list);
+        const threeDayForecast =
+            getThreeDayForecast(
+                forecast.list
+            );
 
 
         weatherContainer.innerHTML = `
@@ -229,13 +213,15 @@ async function displayWeather() {
 
             </div>
 
+
             <h3>
                 Three-Day Forecast
             </h3>
 
+
             <div class="forecast-container">
 
-                ${threeDays.map(day => `
+                ${threeDayForecast.map(day => `
 
                     <article class="forecast-card">
 
@@ -260,7 +246,14 @@ async function displayWeather() {
 
         `;
 
-    } catch (error) {
+    }
+
+    catch (error) {
+
+        console.error(
+            "Weather error:",
+            error
+        );
 
         weatherContainer.innerHTML = `
 
@@ -276,20 +269,25 @@ async function displayWeather() {
 
 
 /* ========================================
-   THREE-DAY FORECAST
+   GET THREE DAY FORECAST
 ======================================== */
 
 function getThreeDayForecast(list) {
 
     const days = {};
 
+
     list.forEach(item => {
 
         const date =
             new Date(item.dt * 1000);
 
+
         const dateKey =
-            date.toLocaleDateString("en-CA");
+            date.toLocaleDateString(
+                "en-CA"
+            );
+
 
         if (!days[dateKey]) {
 
@@ -306,7 +304,9 @@ function getThreeDayForecast(list) {
                     ),
 
                 temperature:
-                    Math.round(item.main.temp),
+                    Math.round(
+                        item.main.temp
+                    ),
 
                 description:
                     item.weather[0].description
@@ -335,6 +335,7 @@ async function getMembers() {
         const response =
             await fetch("data/members.json");
 
+
         if (!response.ok) {
 
             throw new Error(
@@ -343,20 +344,22 @@ async function getMembers() {
 
         }
 
+
         const data =
             await response.json();
 
 
-        /* ONLY GOLD AND SILVER */
+        /* GOLD + SILVER ONLY */
 
         const eligibleMembers =
-            data.members.filter(member =>
-                member.membership === 2 ||
-                member.membership === 3
+            data.members.filter(
+                member =>
+                    member.membership === 2 ||
+                    member.membership === 3
             );
 
 
-        /* RANDOMLY SELECT 3 */
+        /* RANDOM 3 */
 
         const selectedMembers =
             getRandomMembers(
@@ -369,12 +372,15 @@ async function getMembers() {
             selectedMembers
         );
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
-            "Error loading spotlights:",
+            "Spotlight error:",
             error
         );
+
 
         spotlightsContainer.innerHTML = `
 
@@ -403,6 +409,7 @@ function getRandomMembers(
             () => Math.random() - 0.5
         );
 
+
     return shuffled.slice(
         0,
         count
@@ -419,10 +426,14 @@ function displaySpotlights(members) {
 
     spotlightsContainer.innerHTML = "";
 
+
     members.forEach(member => {
 
         const card =
-            document.createElement("article");
+            document.createElement(
+                "article"
+            );
+
 
         card.className =
             "spotlight-card";
@@ -438,9 +449,11 @@ function displaySpotlights(members) {
                 height="100"
             >
 
+
             <h3>
                 ${member.name}
             </h3>
+
 
             <span class="membership ${
                 getMembershipClass(
@@ -454,27 +467,40 @@ function displaySpotlights(members) {
 
             </span>
 
+
             <p>
-                <strong>Phone:</strong>
+                <strong>
+                    Phone:
+                </strong>
+
                 ${member.phone}
             </p>
 
+
             <p>
-                <strong>Address:</strong>
+                <strong>
+                    Address:
+                </strong>
+
                 ${member.address}
             </p>
+
 
             <a
                 href="${member.website}"
                 target="_blank"
-                rel="noopener noreferrer"
-            >
+                rel="noopener noreferrer">
+
                 Visit Website
+
             </a>
 
         `;
 
-        spotlightsContainer.appendChild(card);
+
+        spotlightsContainer.appendChild(
+            card
+        );
 
     });
 
@@ -504,7 +530,7 @@ function getMembershipName(level) {
 
 
 /* ========================================
-   MEMBERSHIP CSS CLASS
+   MEMBERSHIP CLASS
 ======================================== */
 
 function getMembershipClass(level) {
@@ -526,7 +552,7 @@ function getMembershipClass(level) {
 
 
 /* ========================================
-   LOAD HOME PAGE
+   START HOME PAGE
 ======================================== */
 
 if (weatherContainer) {
@@ -534,6 +560,7 @@ if (weatherContainer) {
     displayWeather();
 
 }
+
 
 if (spotlightsContainer) {
 
