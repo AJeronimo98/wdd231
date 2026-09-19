@@ -1,75 +1,42 @@
-/* ========================================
-   TABLET
-======================================== */
-
 @media screen and (min-width: 600px) {
 
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spotlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .members.grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .directory-controls {
         flex-direction: row;
-
-        align-items: center;
-
         justify-content: space-between;
+        align-items: center;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-container {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
-
-    /* HOME */
-
-    .hero-content {
-        position: absolute;
-
-        bottom: 0;
-        left: 0;
-
-        max-width: 600px;
-
-        padding: 2rem;
-
-        background-color:
-            rgba(14, 48, 38, 0.92);
+    .join-layout {
+        grid-template-columns: 1.5fr 1fr;
     }
-
-    .hero img {
-        min-height: 450px;
-    }
-
-    .events-container {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .forecast-container {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-    .spotlights-container {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
 }
 
 
-/* ========================================
-   DESKTOP
-======================================== */
-
 @media screen and (min-width: 900px) {
-
-    .header-container {
-        padding: 1rem;
-    }
 
     .menu-button {
         display: none;
@@ -77,54 +44,54 @@
 
     .navigation {
         max-width: 1200px;
-
         margin: 0 auto;
-
         display: flex;
-
         flex-direction: row;
-
         justify-content: flex-end;
     }
 
     .navigation a {
         border-top: none;
-
         padding: 0.9rem 1.5rem;
     }
 
-    .members.grid {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-    .footer-container {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-
-    /* HOME */
-
-    .hero img {
+    .hero {
         min-height: 500px;
     }
 
+    .hero-image {
+        height: 500px;
+    }
+
+    .hero-content {
+        padding: 3rem;
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
     }
 
-    .spotlights-container {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
+    .spotlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .members.grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-
-/* ========================================
-   LARGE DESKTOP
-======================================== */
 
 @media screen and (min-width: 1200px) {
 
@@ -132,5 +99,4 @@
         padding-left: 0;
         padding-right: 0;
     }
-
 }

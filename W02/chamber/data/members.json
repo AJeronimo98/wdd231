@@ -6,6 +6,7 @@
             "phone": "+52 951 000 1001",
             "website": "https://example.com/cafe-antequera",
             "image": "business1.jpg",
+            "logo": "business1.jpg",
             "membership": 3,
             "description": "A local coffee shop inspired by the traditions and flavors of Oaxaca."
         },
@@ -15,6 +16,7 @@
             "phone": "+52 951 000 1002",
             "website": "https://example.com/barro-tradicion",
             "image": "business2.jpg",
+            "logo": "business2.jpg",
             "membership": 2,
             "description": "A business dedicated to traditional crafts and the beauty of Oaxacan pottery."
         },
@@ -24,6 +26,7 @@
             "phone": "+52 951 000 1003",
             "website": "https://example.com/sabores-del-valle",
             "image": "business3.jpg",
+            "logo": "business3.jpg",
             "membership": 3,
             "description": "A restaurant celebrating traditional Oaxacan cuisine and local ingredients."
         },
@@ -33,6 +36,7 @@
             "phone": "+52 951 000 1004",
             "website": "https://example.com/arte-zapoteco",
             "image": "business4.jpg",
+            "logo": "business4.jpg",
             "membership": 2,
             "description": "A creative business showcasing handmade art, colorful designs, and regional traditions."
         },
@@ -42,6 +46,7 @@
             "phone": "+52 951 000 1005",
             "website": "https://example.com/casa-verde-hotel",
             "image": "business5.jpg",
+            "logo": "business5.jpg",
             "membership": 3,
             "description": "A welcoming hotel inspired by Oaxaca's colonial architecture and local culture."
         },
@@ -51,6 +56,7 @@
             "phone": "+52 951 000 1006",
             "website": "https://example.com/oaxaca-adventures",
             "image": "business6.jpg",
+            "logo": "business6.jpg",
             "membership": 2,
             "description": "A tourism company offering cultural and outdoor experiences around Oaxaca."
         },
@@ -60,6 +66,7 @@
             "phone": "+52 951 000 1007",
             "website": "https://example.com/oaxaca-digital",
             "image": "business7.jpg",
+            "logo": "business7.jpg",
             "membership": 1,
             "description": "A technology company helping local businesses improve their digital presence."
         }

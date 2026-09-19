@@ -1,7 +1,3 @@
-/* ========================================
-   COLOR PALETTE
-======================================== */
-
 :root {
     --green: #174a3a;
     --dark-green: #0e3026;
@@ -14,20 +10,28 @@
     --light-gray: #e5e5e5;
 }
 
-
-/* ========================================
-   BODY
-======================================== */
+/* =========================
+   GENERAL
+========================= */
 
 body {
     background-color: var(--cream);
     color: var(--dark);
 }
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
 
-/* ========================================
+section {
+    margin-bottom: 2rem;
+}
+
+/* =========================
    HEADER
-======================================== */
+========================= */
 
 header {
     background-color: var(--green);
@@ -39,16 +43,10 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0.8rem 1rem;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-
-/* ========================================
-   BRAND
-======================================== */
 
 .brand {
     display: flex;
@@ -76,30 +74,18 @@ header {
     color: #f4dfac;
 }
 
-
-/* ========================================
-   MOBILE MENU
-======================================== */
-
 .menu-button {
     border: none;
     background: transparent;
     color: var(--white);
-
     font-size: 2rem;
     line-height: 1;
-
     padding: 0.25rem 0.5rem;
 }
 
 .menu-button:hover {
     color: var(--gold);
 }
-
-
-/* ========================================
-   NAVIGATION
-======================================== */
 
 .navigation {
     display: none;
@@ -112,42 +98,21 @@ header {
 
 .navigation a {
     padding: 0.9rem 1rem;
-
     text-align: center;
-
     color: var(--white);
-    font-weight: 600;
-
+    font-weight: 700;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.navigation a:hover {
-    background-color: var(--gold);
-    color: var(--dark);
-}
-
+.navigation a:hover,
 .navigation a.active {
     background-color: var(--gold);
     color: var(--dark);
 }
 
-
-/* ========================================
-   MAIN
-======================================== */
-
-main {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding: 1.5rem 1rem 3rem;
-}
-
-
-/* ========================================
-   PAGE HEADING
-======================================== */
+/* =========================
+   PAGE HEADINGS
+========================= */
 
 .page-heading {
     text-align: center;
@@ -156,47 +121,247 @@ main {
 
 .eyebrow {
     color: var(--terracotta);
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 0.12rem;
-
     margin-bottom: 0.5rem;
 }
 
 .page-heading h1 {
     color: var(--green);
     font-size: 2rem;
-
     margin-bottom: 0.5rem;
 }
 
 .page-heading p:last-child {
-    max-width: 600px;
-
+    max-width: 650px;
     margin: 0 auto;
-
     color: var(--gray);
 }
 
+/* =========================
+   BUTTONS
+========================= */
 
-/* ========================================
-   DIRECTORY CONTROLS
-======================================== */
+.button {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark);
+    padding: 0.8rem 1.4rem;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 2px solid var(--gold);
+}
+
+.button:hover {
+    background-color: var(--white);
+    color: var(--green);
+}
+
+.secondary-button {
+    background-color: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+}
+
+/* =========================
+   HOME HERO
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    min-height: 380px;
+    background-color: var(--dark-green);
+}
+
+.hero-image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(14, 48, 38, 0.9),
+        rgba(14, 48, 38, 0.45),
+        rgba(14, 48, 38, 0.1)
+    );
+    color: var(--white);
+}
+
+.hero-content h1 {
+    max-width: 650px;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* =========================
+   HOME EVENTS
+========================= */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.event-card {
+    background-color: var(--white);
+    border-left: 5px solid var(--gold);
+    padding: 1.25rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.event-date {
+    color: var(--terracotta);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.event-card h3 {
+    color: var(--green);
+    margin: 0.4rem 0;
+}
+
+/* =========================
+   WEATHER
+========================= */
+
+.weather-section {
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.weather-section h2 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.weather-current {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.current-temperature {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.current-description {
+    text-transform: capitalize;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.forecast-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.forecast-card h3 {
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+}
+
+.weather-error {
+    color: #ffd7c9;
+}
+
+/* =========================
+   SPOTLIGHTS
+========================= */
+
+.spotlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.spotlight-card {
+    background-color: var(--white);
+    border-top: 5px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.spotlight-logo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.spotlight-card h3 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.spotlight-card p {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.spotlight-membership {
+    display: inline-block;
+    margin: 0.6rem 0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.spotlight-membership.gold {
+    background-color: #f5d77b;
+    color: #5c4100;
+}
+
+.spotlight-membership.silver {
+    background-color: #dddddd;
+    color: #333333;
+}
+
+/* =========================
+   DIRECTORY
+========================= */
 
 .directory-controls {
     display: flex;
     flex-direction: column;
-
     gap: 1rem;
-
     margin-bottom: 1.5rem;
 }
 
 .directory-controls h2 {
     color: var(--green);
-    font-size: 1.5rem;
 }
 
 .view-buttons {
@@ -206,105 +371,67 @@ main {
 
 .view-button {
     border: 2px solid var(--green);
-
     background-color: var(--white);
     color: var(--green);
-
     padding: 0.6rem 1.2rem;
-
     border-radius: 5px;
-
     font-weight: 700;
 }
 
-.view-button:hover {
-    background-color: var(--green);
-    color: var(--white);
-}
-
+.view-button:hover,
 .view-button.active-button {
     background-color: var(--green);
     color: var(--white);
 }
 
-
-/* ========================================
-   MEMBERS GRID
-======================================== */
+/* GRID */
 
 .members.grid {
     display: grid;
-
     grid-template-columns: 1fr;
-
     gap: 1.25rem;
 }
 
-
-/* ========================================
-   MEMBER CARD
-======================================== */
+/* CARD */
 
 .member-card {
     background-color: var(--white);
-
     border: 1px solid var(--light-gray);
     border-top: 5px solid var(--green);
-
     border-radius: 8px;
-
     overflow: hidden;
-
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-
-    display: flex;
-    flex-direction: column;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .member-card:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 6px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
 .member-image {
     width: 100%;
     height: 180px;
-
     object-fit: cover;
 }
 
 .member-info {
     padding: 1rem;
-
-    display: flex;
-    flex-direction: column;
-
-    flex-grow: 1;
 }
 
 .member-info h3 {
     color: var(--green);
-
     font-size: 1.25rem;
-
     margin-bottom: 0.5rem;
 }
 
 .member-description {
     color: var(--gray);
-
     margin-bottom: 1rem;
 }
 
 .member-detail {
     margin-bottom: 0.4rem;
-
     font-size: 0.9rem;
 }
 
@@ -312,22 +439,11 @@ main {
     color: var(--dark-green);
 }
 
-
-/* ========================================
-   MEMBERSHIP BADGES
-======================================== */
-
 .membership {
     display: inline-block;
-
-    width: fit-content;
-
     margin: 0.5rem 0;
-
     padding: 0.3rem 0.6rem;
-
     border-radius: 20px;
-
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -347,371 +463,173 @@ main {
     color: #5c4100;
 }
 
-
-/* ========================================
-   WEBSITE LINKS
-======================================== */
-
 .website-link {
-    margin-top: auto;
-
-    padding-top: 0.75rem;
-
+    display: block;
+    margin-top: 0.75rem;
     color: var(--terracotta);
-
     font-weight: 700;
-
     text-decoration: underline;
 }
 
-.website-link:hover {
-    color: var(--green);
-}
-
-
-/* ========================================
-   LIST VIEW
-======================================== */
+/* LIST */
 
 .members.list {
     display: flex;
     flex-direction: column;
-
     gap: 0.75rem;
 }
 
 .members.list .member-card {
-    display: block;
-
+    display: grid;
+    grid-template-columns: 1fr;
     border-top: 1px solid var(--light-gray);
     border-left: 5px solid var(--green);
-
     border-radius: 5px;
-
     box-shadow: none;
-}
-
-.members.list .member-card:hover {
-    transform: none;
 }
 
 .members.list .member-image {
     display: none;
 }
 
-.members.list .member-info {
-    padding: 1rem;
-}
-
 .members.list .member-description {
     display: none;
 }
 
-.members.list .website-link {
-    display: inline-block;
+.members.list .member-card:hover {
+    transform: none;
 }
 
+/* =========================
+   DISCOVER
+========================= */
 
-/* ========================================
-   LOADING / ERROR
-======================================== */
-
-.loading,
-.error {
-    grid-column: 1 / -1;
-
-    text-align: center;
-
-    padding: 2rem;
-
-    color: var(--gray);
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-.error {
-    color: var(--terracotta);
-}
-
-
-/* ========================================
-   HOME PAGE - HERO
-======================================== */
-
-.hero {
-    position: relative;
-
-    margin-bottom: 2rem;
-
-    overflow: hidden;
-
+.discover-card {
+    background-color: var(--white);
     border-radius: 8px;
-
-    background-color: var(--green);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-.hero img {
+.discover-card img {
     width: 100%;
-
-    min-height: 300px;
-
+    height: 200px;
     object-fit: cover;
 }
 
-.hero-content {
+.discover-card-content {
+    padding: 1rem;
+}
+
+.discover-card h2 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+/* =========================
+   JOIN
+========================= */
+
+.join-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.join-form {
+    background-color: var(--white);
     padding: 1.5rem;
-
-    background-color: var(--green);
-
-    color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-.hero-content h1 {
-    font-size: 2rem;
-
-    margin-bottom: 0.75rem;
-}
-
-.hero-content p {
-    margin-bottom: 1rem;
-}
-
-.hero-button {
-    display: inline-block;
-
-    padding: 0.75rem 1.25rem;
-
-    background-color: var(--gold);
-
-    color: var(--dark);
-
+.join-form label {
+    display: block;
     font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.3rem;
+}
 
+.join-form input,
+.join-form select,
+.join-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
-.hero-button:hover {
-    background-color: var(--white);
+.join-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-
-/* ========================================
-   HOME SECTIONS
-======================================== */
-
-.home-section {
-    margin-bottom: 2.5rem;
-}
-
-.home-section h2 {
-    color: var(--green);
-
-    font-size: 1.5rem;
-
-    margin-bottom: 1rem;
-}
-
-
-/* ========================================
-   EVENTS
-======================================== */
-
-.events-container {
+.membership-options {
     display: grid;
-
-    grid-template-columns: 1fr;
-
     gap: 1rem;
 }
 
-.event-card {
-    padding: 1.25rem;
-
+.membership-option {
     background-color: var(--white);
-
-    border-left: 5px solid var(--gold);
-
-    border-radius: 6px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.event-card h3 {
-    color: var(--green);
-
-    margin-bottom: 0.5rem;
-}
-
-.event-card p {
-    margin-bottom: 0.5rem;
-}
-
-
-/* ========================================
-   WEATHER
-======================================== */
-
-.weather-section {
-    background-color: var(--white);
-
-    padding: 1.25rem;
-
-    border-radius: 8px;
-
     border-top: 5px solid var(--gold);
-}
-
-.weather-current {
-    display: flex;
-
-    align-items: center;
-
-    gap: 1rem;
-
-    margin-bottom: 1.5rem;
-}
-
-.weather-current img {
-    width: 80px;
-    height: 80px;
-}
-
-.weather-current h3 {
-    color: var(--green);
-
-    font-size: 1.5rem;
-}
-
-.forecast-container {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 0.75rem;
-
-    margin-top: 1rem;
-}
-
-.forecast-card {
     padding: 1rem;
-
-    background-color: var(--cream);
-
-    border-radius: 6px;
-}
-
-.forecast-card h3 {
-    color: var(--green);
-
-    margin-bottom: 0.25rem;
-}
-
-
-/* ========================================
-   SPOTLIGHTS
-======================================== */
-
-.spotlights-container {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 1.25rem;
-}
-
-.spotlight-card {
-    display: flex;
-
-    flex-direction: column;
-
-    padding: 1.25rem;
-
-    background-color: var(--white);
-
-    border-top: 5px solid var(--gold);
-
     border-radius: 8px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-.spotlight-card img {
-    width: 100%;
-
-    max-width: 180px;
-
-    height: 100px;
-
-    object-fit: contain;
-
-    margin: 0 auto 1rem;
-}
-
-.spotlight-card h3 {
+.membership-option h3 {
     color: var(--green);
-
-    margin-bottom: 0.5rem;
 }
 
-.spotlight-card p {
-    margin-bottom: 0.4rem;
-}
-
-.spotlight-card a {
-    color: var(--terracotta);
-
-    font-weight: 700;
-
-    text-decoration: underline;
-
-    margin-top: auto;
-
-    padding-top: 0.75rem;
-}
-
-
-/* ========================================
+/* =========================
    FOOTER
-======================================== */
+========================= */
 
 footer {
     background-color: var(--green);
-
     color: var(--white);
-
     border-top: 5px solid var(--gold);
 }
 
 .footer-container {
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 2rem 1rem;
-
     display: grid;
-
     grid-template-columns: 1fr;
-
     gap: 2rem;
 }
 
 .footer-column h2 {
     color: var(--gold);
-
     font-size: 1.1rem;
-
     margin-bottom: 0.75rem;
 }
 
 .footer-column p {
     margin-bottom: 0.35rem;
-
     font-size: 0.9rem;
 }
 
 #lastmodified {
     color: #f4dfac;
-
     font-size: 0.8rem;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.loading,
+.error {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
 }

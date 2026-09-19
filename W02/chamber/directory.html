@@ -1,208 +1,273 @@
-const membersContainer = document.querySelector("#members");
-const gridButton = document.querySelector("#grid-button");
-const listButton = document.querySelector("#list-button");
-const menuButton = document.querySelector("#menu-button");
-const navigation = document.querySelector("#navigation");
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore the Oaxaca de Juárez Chamber of Commerce business directory.">
+
+    <meta
+        name="author"
+        content="Angel Gael Jeronimo">
+
+    <link
+        rel="icon"
+        href="images/favicon.svg"
+        type="image/svg+xml">
+
+    <link
+        rel="stylesheet"
+        href="styles/normalize.css">
+
+    <link
+        rel="stylesheet"
+        href="styles/small.css">
+
+    <link
+        rel="stylesheet"
+        href="styles/larger.css">
+
+    <title>
+        Oaxaca de Juárez Chamber of Commerce | Directory
+    </title>
+
+</head>
 
 
-// ===============================
-// MOBILE MENU
-// ===============================
+<body>
 
-if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-        const isOpen = navigation.classList.toggle("open");
+<header>
 
-        menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
+    <div class="header-container">
 
-        menuButton.textContent = isOpen ? "✕" : "☰";
-    });
-}
+        <a
+            class="brand"
+            href="index.html">
 
-
-// ===============================
-// LOAD MEMBERS
-// ===============================
-
-async function getMembers() {
-    try {
-        const response = await fetch("data/members.json");
-
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        displayMembers(data.members);
-
-    } catch (error) {
-        console.error("Error loading member data:", error);
-
-        if (membersContainer) {
-            membersContainer.innerHTML = `
-                <p class="error">
-                    We were unable to load the business directory.
-                    Please try again later.
-                </p>
-            `;
-        }
-    }
-}
-
-
-// ===============================
-// DISPLAY MEMBERS
-// ===============================
-
-function displayMembers(members) {
-
-    if (!membersContainer) {
-        return;
-    }
-
-    membersContainer.innerHTML = "";
-
-    members.forEach(member => {
-
-        const card = document.createElement("article");
-
-        card.className = "member-card";
-
-        card.innerHTML = `
             <img
-                class="member-image"
-                src="images/${member.image}"
-                alt="${member.name} business image"
-                loading="lazy"
-                width="600"
-                height="400"
-            >
+                src="images/favicon.svg"
+                alt="Oaxaca Chamber logo"
+                width="60"
+                height="60">
 
-            <div class="member-info">
+            <div class="brand-text">
 
-                <h3>${member.name}</h3>
-
-                <p class="member-description">
-                    ${member.description}
-                </p>
-
-                <p class="member-detail">
-                    <strong>Address:</strong>
-                    ${member.address}
-                </p>
-
-                <p class="member-detail">
-                    <strong>Phone:</strong>
-                    ${member.phone}
-                </p>
-
-                <span class="membership ${getMembershipClass(member.membership)}">
-                    ${getMembershipName(member.membership)}
+                <span class="site-name">
+                    Oaxaca de Juárez
                 </span>
 
-                <a
-                    class="website-link"
-                    href="${member.website}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Visit Website
-                </a>
+                <span class="site-subtitle">
+                    Chamber of Commerce
+                </span>
 
             </div>
-        `;
 
-        membersContainer.appendChild(card);
-    });
-}
+        </a>
 
 
-// ===============================
-// MEMBERSHIP
-// ===============================
+        <button
+            id="menu-button"
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation">
 
-function getMembershipName(level) {
+            ☰
 
-    if (level === 3) {
-        return "Gold Member";
-    }
+        </button>
 
-    if (level === 2) {
-        return "Silver Member";
-    }
-
-    return "Member";
-}
+    </div>
 
 
-function getMembershipClass(level) {
+    <nav
+        id="navigation"
+        class="navigation">
 
-    if (level === 3) {
-        return "gold";
-    }
+        <a href="index.html">
+            Home
+        </a>
 
-    if (level === 2) {
-        return "silver";
-    }
+        <a href="discover.html">
+            Discover
+        </a>
 
-    return "member";
-}
+        <a
+            href="directory.html"
+            class="active">
+            Directory
+        </a>
 
+        <a href="join.html">
+            Join
+        </a>
 
-// ===============================
-// GRID VIEW
-// ===============================
+    </nav>
 
-if (gridButton && listButton && membersContainer) {
-
-    gridButton.addEventListener("click", () => {
-
-        membersContainer.classList.remove("list");
-        membersContainer.classList.add("grid");
-
-        gridButton.classList.add("active-button");
-        listButton.classList.remove("active-button");
-    });
+</header>
 
 
-    // ===============================
-    // LIST VIEW
-    // ===============================
+<main>
 
-    listButton.addEventListener("click", () => {
+    <section class="page-heading">
 
-        membersContainer.classList.remove("grid");
-        membersContainer.classList.add("list");
+        <p class="eyebrow">
+            LOCAL BUSINESS COMMUNITY
+        </p>
 
-        listButton.classList.add("active-button");
-        gridButton.classList.remove("active-button");
-    });
-}
+        <h1>
+            Business Directory
+        </h1>
 
+        <p>
+            Discover businesses and organizations
+            that help Oaxaca de Juárez grow.
+        </p>
 
-// ===============================
-// FOOTER
-// ===============================
-
-const currentYear = document.querySelector("#currentyear");
-const lastModified = document.querySelector("#lastmodified");
-
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
-
-if (lastModified) {
-    lastModified.textContent = document.lastModified;
-}
+    </section>
 
 
-// ===============================
-// START
-// ===============================
+    <section>
 
-getMembers();
+        <div class="directory-controls">
+
+            <h2>
+                Our Members
+            </h2>
+
+
+            <div class="view-buttons">
+
+                <button
+                    id="grid-button"
+                    class="view-button active-button"
+                    type="button">
+
+                    Grid
+
+                </button>
+
+
+                <button
+                    id="list-button"
+                    class="view-button"
+                    type="button">
+
+                    List
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="members"
+            class="members grid"
+            aria-label="Chamber of Commerce members">
+
+            <p class="loading">
+                Loading business directory...
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-container">
+
+        <section class="footer-column">
+
+            <h2>
+                Oaxaca de Juárez
+            </h2>
+
+            <p>
+                Chamber of Commerce
+            </p>
+
+            <p>
+                Supporting local businesses
+                and strengthening our community.
+            </p>
+
+        </section>
+
+
+        <section class="footer-column">
+
+            <h2>
+                Contact
+            </h2>
+
+            <p>
+                Centro Histórico
+            </p>
+
+            <p>
+                Oaxaca de Juárez, Oaxaca
+            </p>
+
+            <p>
+                Mexico, C.P. 68000
+            </p>
+
+            <p>
+                Email: info@oaxacachamber.example
+            </p>
+
+            <p>
+                Phone: +52 951 000 0000
+            </p>
+
+        </section>
+
+
+        <section class="footer-column">
+
+            <h2>
+                Development
+            </h2>
+
+            <p>
+                WDD 231
+            </p>
+
+            <p>
+                © <span id="currentyear"></span>
+                Oaxaca de Juárez Chamber of Commerce
+            </p>
+
+            <p>
+                Last Modification:
+            </p>
+
+            <p id="lastmodified">
+                Loading...
+            </p>
+
+        </section>
+
+    </div>
+
+</footer>
+
+
+<script src="scripts/main.js"></script>
+<script src="scripts/directory.js"></script>
+
+</body>
+</html>
