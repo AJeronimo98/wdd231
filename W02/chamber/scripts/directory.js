@@ -1,48 +1,48 @@
 /* ========================================
+   DIRECTORY PAGE JAVASCRIPT
+======================================== */
+
+
+/* ========================================
    SELECT HTML ELEMENTS
 ======================================== */
 
-const membersContainer =
-    document.querySelector("#members");
-
-const gridButton =
-    document.querySelector("#grid-button");
-
-const listButton =
-    document.querySelector("#list-button");
-
-const menuButton =
-    document.querySelector("#menu-button");
-
-const navigation =
-    document.querySelector("#navigation");
+const membersContainer = document.querySelector("#members");
+const gridButton = document.querySelector("#grid-button");
+const listButton = document.querySelector("#list-button");
+const menuButton = document.querySelector("#menu-button");
+const navigation = document.querySelector("#navigation");
 
 
 /* ========================================
    MOBILE NAVIGATION
 ======================================== */
 
-menuButton.addEventListener("click", () => {
+if (menuButton && navigation) {
 
-    const isOpen =
-        navigation.classList.toggle("open");
+    menuButton.addEventListener("click", () => {
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
+        const isOpen =
+            navigation.classList.toggle("open");
 
-    menuButton.setAttribute(
-        "aria-label",
-        isOpen
-            ? "Close navigation menu"
-            : "Open navigation menu"
-    );
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-    menuButton.textContent =
-        isOpen ? "✕" : "☰";
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
 
-});
+        menuButton.textContent =
+            isOpen ? "✕" : "☰";
+
+    });
+
+}
 
 
 /* ========================================
@@ -56,7 +56,6 @@ async function getMembers() {
         const response =
             await fetch("data/members.json");
 
-
         if (!response.ok) {
 
             throw new Error(
@@ -65,13 +64,10 @@ async function getMembers() {
 
         }
 
-
         const data =
             await response.json();
 
-
         displayMembers(data.members);
-
 
     } catch (error) {
 
@@ -79,7 +75,6 @@ async function getMembers() {
             "Error loading member data:",
             error
         );
-
 
         membersContainer.innerHTML = `
             <p class="error">
@@ -101,15 +96,12 @@ function displayMembers(members) {
 
     membersContainer.innerHTML = "";
 
-
     members.forEach(member => {
 
         const card =
             document.createElement("article");
 
-
         card.className = "member-card";
-
 
         card.innerHTML = `
 
@@ -122,35 +114,29 @@ function displayMembers(members) {
                 height="400"
             >
 
-
             <div class="member-info">
 
                 <h3>
                     ${member.name}
                 </h3>
 
-
                 <p class="member-description">
                     ${member.description}
                 </p>
-
 
                 <p class="member-detail">
                     <strong>Address:</strong>
                     ${member.address}
                 </p>
 
-
                 <p class="member-detail">
                     <strong>Phone:</strong>
                     ${member.phone}
                 </p>
 
-
                 <span class="membership ${getMembershipClass(member.membership)}">
                     ${getMembershipName(member.membership)}
                 </span>
-
 
                 <a
                     class="website-link"
@@ -164,7 +150,6 @@ function displayMembers(members) {
             </div>
 
         `;
-
 
         membersContainer.appendChild(card);
 
@@ -223,36 +208,38 @@ function getMembershipClass(level) {
    GRID VIEW
 ======================================== */
 
-gridButton.addEventListener("click", () => {
+if (gridButton) {
 
-    membersContainer.classList.add("grid");
+    gridButton.addEventListener("click", () => {
 
-    membersContainer.classList.remove("list");
+        membersContainer.classList.remove("list");
+        membersContainer.classList.add("grid");
 
+        gridButton.classList.add("active-button");
+        listButton.classList.remove("active-button");
 
-    gridButton.classList.add("active-button");
+    });
 
-    listButton.classList.remove("active-button");
-
-});
+}
 
 
 /* ========================================
    LIST VIEW
 ======================================== */
 
-listButton.addEventListener("click", () => {
+if (listButton) {
 
-    membersContainer.classList.add("list");
+    listButton.addEventListener("click", () => {
 
-    membersContainer.classList.remove("grid");
+        membersContainer.classList.remove("grid");
+        membersContainer.classList.add("list");
 
+        listButton.classList.add("active-button");
+        gridButton.classList.remove("active-button");
 
-    listButton.classList.add("active-button");
+    });
 
-    gridButton.classList.remove("active-button");
-
-});
+}
 
 
 /* ========================================
@@ -260,23 +247,37 @@ listButton.addEventListener("click", () => {
 ======================================== */
 
 const currentYear =
-    new Date().getFullYear();
+    document.querySelector("#currentyear");
 
+if (currentYear) {
 
-document.querySelector("#currentyear")
-    .textContent = currentYear;
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
 
 
 /* ========================================
    LAST MODIFIED
 ======================================== */
 
-document.querySelector("#lastmodified")
-    .textContent = document.lastModified;
+const lastModified =
+    document.querySelector("#lastmodified");
+
+if (lastModified) {
+
+    lastModified.textContent =
+        document.lastModified;
+
+}
 
 
 /* ========================================
    LOAD DIRECTORY
 ======================================== */
 
-getMembers();
+if (membersContainer) {
+
+    getMembers();
+
+}

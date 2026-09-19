@@ -1,4 +1,3 @@
-
 /* ========================================
    HOME PAGE JAVASCRIPT
 ======================================== */
@@ -25,60 +24,81 @@ const spotlightsContainer =
    MOBILE NAVIGATION
 ======================================== */
 
-menuButton.addEventListener("click", () => {
+if (menuButton && navigation) {
 
-    const isOpen =
-        navigation.classList.toggle("open");
+    menuButton.addEventListener("click", () => {
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
+        const isOpen =
+            navigation.classList.toggle("open");
 
-    menuButton.setAttribute(
-        "aria-label",
-        isOpen
-            ? "Close navigation menu"
-            : "Open navigation menu"
-    );
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-    menuButton.textContent =
-        isOpen ? "✕" : "☰";
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
 
-});
+        menuButton.textContent =
+            isOpen ? "✕" : "☰";
+
+    });
+
+}
 
 
 /* ========================================
    FOOTER
 ======================================== */
 
-document.querySelector("#currentyear")
-    .textContent = new Date().getFullYear();
+const currentYear =
+    document.querySelector("#currentyear");
 
-document.querySelector("#lastmodified")
-    .textContent = document.lastModified;
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+
+
+const lastModified =
+    document.querySelector("#lastmodified");
+
+if (lastModified) {
+
+    lastModified.textContent =
+        document.lastModified;
+
+}
 
 
 /* ========================================
-   OPENWEATHERMAP API
+   OPENWEATHERMAP
 ======================================== */
 
-// Replace with your OpenWeatherMap API key.
-const API_KEY = "bc004250ecec324b4a7670a1a00965df";
+const API_KEY =
+    "bc004250ecec324b4a7670a1a00965df";
 
-const CITY = "Oaxaca de Juarez";
-
-const UNITS = "metric";
+const CITY =
+    "Oaxaca de Juarez";
 
 const WEATHER_URL =
-    `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=${UNITS}&lang=en`;
+    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=metric&lang=en`;
+
+const FORECAST_URL =
+    `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=metric&lang=en`;
 
 
 /* ========================================
-   GET WEATHER
+   GET CURRENT WEATHER
 ======================================== */
 
-async function getWeather() {
+async function getCurrentWeather() {
 
     try {
 
@@ -88,28 +108,56 @@ async function getWeather() {
         if (!response.ok) {
 
             throw new Error(
-                `Weather error: ${response.status}`
+                `Current weather error: ${response.status}`
             );
 
         }
 
-        const data =
-            await response.json();
-
-        displayWeather(data);
+        return await response.json();
 
     } catch (error) {
 
         console.error(
-            "Error loading weather:",
+            "Error loading current weather:",
             error
         );
 
-        weatherContainer.innerHTML = `
-            <p class="error">
-                Weather information is currently unavailable.
-            </p>
-        `;
+        throw error;
+
+    }
+
+}
+
+
+/* ========================================
+   GET FORECAST
+======================================== */
+
+async function getForecast() {
+
+    try {
+
+        const response =
+            await fetch(FORECAST_URL);
+
+        if (!response.ok) {
+
+            throw new Error(
+                `Forecast error: ${response.status}`
+            );
+
+        }
+
+        return await response.json();
+
+    } catch (error) {
+
+        console.error(
+            "Error loading forecast:",
+            error
+        );
+
+        throw error;
 
     }
 
@@ -120,88 +168,109 @@ async function getWeather() {
    DISPLAY WEATHER
 ======================================== */
 
-function displayWeather(data) {
+async function displayWeather() {
 
-    const currentWeather =
-        data.list[0];
+    try {
 
-    const temperature =
-        Math.round(currentWeather.main.temp);
+        const current =
+            await getCurrentWeather();
 
-    const description =
-        currentWeather.weather[0].description;
-
-    const iconCode =
-        currentWeather.weather[0].icon;
-
-    const iconURL =
-        `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-
-    const forecast =
-        getThreeDayForecast(data.list);
+        const forecast =
+            await getForecast();
 
 
-    weatherContainer.innerHTML = `
+        /* CURRENT WEATHER */
 
-        <div class="weather-current">
+        const temperature =
+            Math.round(current.main.temp);
 
-            <img
-                src="${iconURL}"
-                alt="${description}"
-                width="80"
-                height="80"
-            >
+        const description =
+            current.weather[0].description;
 
-            <div>
+        const iconCode =
+            current.weather[0].icon;
 
-                <h3>
-                    ${temperature}°C
-                </h3>
-
-                <p>
-                    ${description}
-                </p>
-
-                <p>
-                    Oaxaca de Juárez
-                </p>
-
-            </div>
-
-        </div>
+        const iconURL =
+            `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
 
-        <h3>
-            Three-Day Forecast
-        </h3>
+        /* THREE-DAY FORECAST */
+
+        const threeDays =
+            getThreeDayForecast(forecast.list);
 
 
-        <div class="forecast-container">
+        weatherContainer.innerHTML = `
 
-            ${forecast.map(day => `
+            <div class="weather-current">
 
-                <article class="forecast-card">
+                <img
+                    src="${iconURL}"
+                    alt="${description}"
+                    width="80"
+                    height="80"
+                >
+
+                <div>
 
                     <h3>
-                        ${day.label}
+                        ${temperature}°C
                     </h3>
 
                     <p>
-                        Temperature:
-                        ${day.temperature}°C
+                        ${description}
                     </p>
 
                     <p>
-                        ${day.description}
+                        Oaxaca de Juárez
                     </p>
 
-                </article>
+                </div>
 
-            `).join("")}
+            </div>
 
-        </div>
+            <h3>
+                Three-Day Forecast
+            </h3>
 
-    `;
+            <div class="forecast-container">
+
+                ${threeDays.map(day => `
+
+                    <article class="forecast-card">
+
+                        <h3>
+                            ${day.label}
+                        </h3>
+
+                        <p>
+                            Temperature:
+                            ${day.temperature}°C
+                        </p>
+
+                        <p>
+                            ${day.description}
+                        </p>
+
+                    </article>
+
+                `).join("")}
+
+            </div>
+
+        `;
+
+    } catch (error) {
+
+        weatherContainer.innerHTML = `
+
+            <p class="error">
+                Weather information is currently unavailable.
+            </p>
+
+        `;
+
+    }
 
 }
 
@@ -220,20 +289,21 @@ function getThreeDayForecast(list) {
             new Date(item.dt * 1000);
 
         const dateKey =
-            date.toISOString().split("T")[0];
+            date.toLocaleDateString("en-CA");
 
         if (!days[dateKey]) {
 
             days[dateKey] = {
 
-                label: date.toLocaleDateString(
-                    "en-US",
-                    {
-                        weekday: "short",
-                        month: "short",
-                        day: "numeric"
-                    }
-                ),
+                label:
+                    date.toLocaleDateString(
+                        "en-US",
+                        {
+                            weekday: "short",
+                            month: "short",
+                            day: "numeric"
+                        }
+                    ),
 
                 temperature:
                     Math.round(item.main.temp),
@@ -248,7 +318,8 @@ function getThreeDayForecast(list) {
     });
 
 
-    return Object.values(days).slice(1, 4);
+    return Object.values(days)
+        .slice(1, 4);
 
 }
 
@@ -275,16 +346,28 @@ async function getMembers() {
         const data =
             await response.json();
 
+
+        /* ONLY GOLD AND SILVER */
+
         const eligibleMembers =
             data.members.filter(member =>
                 member.membership === 2 ||
                 member.membership === 3
             );
 
-        const selectedMembers =
-            getRandomMembers(eligibleMembers, 3);
 
-        displaySpotlights(selectedMembers);
+        /* RANDOMLY SELECT 3 */
+
+        const selectedMembers =
+            getRandomMembers(
+                eligibleMembers,
+                3
+            );
+
+
+        displaySpotlights(
+            selectedMembers
+        );
 
     } catch (error) {
 
@@ -294,9 +377,11 @@ async function getMembers() {
         );
 
         spotlightsContainer.innerHTML = `
+
             <p class="error">
                 Business spotlights are currently unavailable.
             </p>
+
         `;
 
     }
@@ -308,12 +393,20 @@ async function getMembers() {
    RANDOM MEMBERS
 ======================================== */
 
-function getRandomMembers(members, count) {
+function getRandomMembers(
+    members,
+    count
+) {
 
     const shuffled =
-        [...members].sort(() => Math.random() - 0.5);
+        [...members].sort(
+            () => Math.random() - 0.5
+        );
 
-    return shuffled.slice(0, count);
+    return shuffled.slice(
+        0,
+        count
+    );
 
 }
 
@@ -331,7 +424,9 @@ function displaySpotlights(members) {
         const card =
             document.createElement("article");
 
-        card.className = "spotlight-card";
+        card.className =
+            "spotlight-card";
+
 
         card.innerHTML = `
 
@@ -348,10 +443,14 @@ function displaySpotlights(members) {
             </h3>
 
             <span class="membership ${
-                getMembershipClass(member.membership)
+                getMembershipClass(
+                    member.membership
+                )
             }">
 
-                ${getMembershipName(member.membership)}
+                ${getMembershipName(
+                    member.membership
+                )}
 
             </span>
 
@@ -370,9 +469,7 @@ function displaySpotlights(members) {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-
                 Visit Website
-
             </a>
 
         `;
@@ -432,6 +529,14 @@ function getMembershipClass(level) {
    LOAD HOME PAGE
 ======================================== */
 
-getWeather();
+if (weatherContainer) {
 
-getMembers();
+    displayWeather();
+
+}
+
+if (spotlightsContainer) {
+
+    getMembers();
+
+}
