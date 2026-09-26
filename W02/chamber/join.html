@@ -1,381 +1,440 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Join the Oaxaca de Juárez Chamber of Commerce.">
+<meta
+    name="description"
+    content="Join the Oaxaca de Juárez Chamber of Commerce.">
 
-    <meta
-        name="author"
-        content="Angel Gael Jeronimo">
+<meta
+    name="author"
+    content="Angel Gael Jeronimo">
 
-    <link
-        rel="icon"
-        href="images/favicon.svg"
-        type="image/svg+xml">
+<link
+    rel="icon"
+    href="images/favicon.svg"
+    type="image/svg+xml">
 
-    <link
-        rel="stylesheet"
-        href="styles/normalize.css">
+<link
+    rel="stylesheet"
+    href="styles/normalize.css">
 
-    <link
-        rel="stylesheet"
-        href="styles/small.css">
+<link
+    rel="stylesheet"
+    href="styles/small.css">
 
-    <link
-        rel="stylesheet"
-        href="styles/larger.css">
+<link
+    rel="stylesheet"
+    href="styles/larger.css">
 
-    <title>
-        Oaxaca de Juárez Chamber | Join
-    </title>
+<title>
+    Oaxaca de Juárez Chamber | Join
+</title>
+```
 
 </head>
-
 
 <body>
 
 <header>
 
-    <div class="header-container">
+```
+<div class="header-container">
 
-        <a
-            class="brand"
-            href="index.html">
+    <a
+        class="brand"
+        href="index.html">
 
-            <img
-                src="images/favicon.svg"
-                alt="Oaxaca Chamber logo">
+        <img
+            src="images/favicon.svg"
+            alt="Oaxaca Chamber logo">
 
-            <div class="brand-text">
+        <div class="brand-text">
 
-                <span class="site-name">
-                    Oaxaca de Juárez
-                </span>
+            <span class="site-name">
+                Oaxaca de Juárez
+            </span>
 
-                <span class="site-subtitle">
-                    Chamber of Commerce
-                </span>
+            <span class="site-subtitle">
+                Chamber of Commerce
+            </span>
 
-            </div>
+        </div>
 
-        </a>
-
-
-        <button
-            id="menu-button"
-            class="menu-button"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
-
-            ☰
-
-        </button>
-
-    </div>
+    </a>
 
 
-    <nav
-        id="navigation"
-        class="navigation">
+    <button
+        id="menu-button"
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navigation">
 
-        <a href="index.html">Home</a>
+        ☰
 
-        <a href="discover.html">Discover</a>
+    </button>
 
-        <a href="directory.html">Directory</a>
+</div>
 
-        <a
-            href="join.html"
-            class="active">
-            Join
-        </a>
 
-    </nav>
+<nav
+    id="navigation"
+    class="navigation">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="discover.html">
+        Discover
+    </a>
+
+    <a href="directory.html">
+        Directory
+    </a>
+
+    <a
+        href="join.html"
+        class="active">
+        Join
+    </a>
+
+</nav>
+```
 
 </header>
 
-
 <main>
 
-    <section class="page-heading">
+```
+<section class="page-heading">
 
-        <p class="eyebrow">
-            BECOME A MEMBER
-        </p>
+    <p class="eyebrow">
+        BECOME A MEMBER
+    </p>
 
-        <h1>
-            Join the Chamber
-        </h1>
+    <h1>
+        Join the Chamber
+    </h1>
 
-        <p>
-            Connect your business with the Oaxaca
-            de Juárez business community.
-        </p>
+    <p>
+        Connect your business with the Oaxaca
+        de Juárez business community.
+    </p>
 
-    </section>
+</section>
 
 
-    <div class="join-layout">
+<div class="join-layout">
 
-        <form
-            class="join-form"
-            method="get"
-            action="thankyou.html">
+    <form
+        class="join-form"
+        method="get"
+        action="thankyou.html">
 
-            <label for="first-name">
-                First Name
-            </label>
+        <label for="first-name">
+            First Name
 
             <input
                 id="first-name"
                 name="firstName"
                 type="text"
+                title="Enter your first name"
                 required
                 autocomplete="given-name">
+        </label>
 
 
-            <label for="last-name">
-                Last Name
-            </label>
+        <label for="last-name">
+            Last Name
 
             <input
                 id="last-name"
                 name="lastName"
                 type="text"
+                title="Enter your last name"
                 required
                 autocomplete="family-name">
+        </label>
 
 
-            <label for="email">
-                Email
-            </label>
+        <label for="organization-title">
+            Organizational Title
+
+            <input
+                id="organization-title"
+                name="organizationTitle"
+                type="text"
+                title="Enter your title within your organization"
+                autocomplete="organization-title"
+                pattern="[A-Za-zÀ-ÿ -]{7,}">
+        </label>
+
+
+        <label for="email">
+            Email
 
             <input
                 id="email"
                 name="email"
                 type="email"
+                title="Enter your email address"
                 required
-                autocomplete="email">
+                autocomplete="email"
+                placeholder="example@email.com">
+        </label>
 
 
-            <label for="phone">
-                Phone
-            </label>
+        <label for="phone">
+            Mobile Phone
 
             <input
                 id="phone"
                 name="phone"
                 type="tel"
+                title="Enter your mobile phone number"
                 required
                 autocomplete="tel">
+        </label>
 
 
-            <label for="business">
-                Business Name
-            </label>
+        <label for="business">
+            Business / Organization Name
 
             <input
                 id="business"
                 name="business"
                 type="text"
+                title="Enter your business or organization name"
                 required
                 autocomplete="organization">
+        </label>
 
 
-            <label for="membership">
-                Membership Level
-            </label>
+        <label for="membership">
+            Membership Level
 
             <select
                 id="membership"
                 name="membership"
+                title="Select a membership level"
                 required>
 
                 <option value="">
                     Select a membership
                 </option>
 
-                <option value="NP">
-                    Non-Profit
+                <option value="np">
+                    NP Membership
                 </option>
 
-                <option value="Bronze">
-                    Bronze
+                <option value="bronze">
+                    Bronze Membership
                 </option>
 
-                <option value="Silver">
-                    Silver
+                <option value="silver">
+                    Silver Membership
                 </option>
 
-                <option value="Gold">
-                    Gold
+                <option value="gold">
+                    Gold Membership
                 </option>
 
             </select>
+        </label>
 
 
-            <label for="description">
-                Business Description
-            </label>
+        <label for="description">
+            Business / Organization Description
 
             <textarea
                 id="description"
-                name="description"></textarea>
+                name="description"
+                title="Describe your business or organization"></textarea>
+        </label>
 
 
-            <button
-                class="button"
-                type="submit">
-
-                Submit Application
-
-            </button>
-
-        </form>
+        <input
+            type="hidden"
+            id="timestamp"
+            name="timestamp">
 
 
-        <section>
+        <button
+            class="button"
+            type="submit">
 
-            <div class="membership-options">
+            Submit Application
 
-                <article class="membership-option">
+        </button>
 
-                    <h3>
-                        Non-Profit
-                    </h3>
-
-                    <p>
-                        Designed for community and nonprofit
-                        organizations.
-                    </p>
-
-                </article>
+    </form>
 
 
-                <article class="membership-option">
+    <section>
 
-                    <h3>
-                        Bronze
-                    </h3>
+        <div class="membership-options">
 
-                    <p>
-                        Basic chamber membership and
-                        community networking opportunities.
-                    </p>
+            <article class="membership-option">
 
-                </article>
+                <h2>
+                    NP Membership
+                </h2>
 
+                <p>
+                    Designed for nonprofit organizations.
+                </p>
 
-                <article class="membership-option">
+                <a href="#np-modal">
+                    More Information
+                </a>
 
-                    <h3>
-                        Silver
-                    </h3>
-
-                    <p>
-                        Additional business visibility and
-                        networking opportunities.
-                    </p>
-
-                </article>
+            </article>
 
 
-                <article class="membership-option">
+            <article class="membership-option">
 
-                    <h3>
-                        Gold
-                    </h3>
+                <h2>
+                    Bronze Membership
+                </h2>
 
-                    <p>
-                        Premium visibility and enhanced
-                        chamber opportunities.
-                    </p>
+                <p>
+                    Basic chamber membership and
+                    community networking opportunities.
+                </p>
 
-                </article>
+                <a href="#bronze-modal">
+                    More Information
+                </a>
 
-            </div>
+            </article>
 
-        </section>
 
-    </div>
+            <article class="membership-option">
+
+                <h2>
+                    Silver Membership
+                </h2>
+
+                <p>
+                    Additional business visibility and
+                    networking opportunities.
+                </p>
+
+                <a href="#silver-modal">
+                    More Information
+                </a>
+
+            </article>
+
+
+            <article class="membership-option">
+
+                <h2>
+                    Gold Membership
+                </h2>
+
+                <p>
+                    Premium visibility and enhanced
+                    chamber opportunities.
+                </p>
+
+                <a href="#gold-modal">
+                    More Information
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- Membership modals will go here -->
+```
 
 </main>
 
-
 <footer>
 
-    <div class="footer-container">
+```
+<div class="footer-container">
 
-        <section class="footer-column">
+    <section class="footer-column">
 
-            <h2>
-                Oaxaca de Juárez
-            </h2>
+        <h2>
+            Oaxaca de Juárez
+        </h2>
 
-            <p>
-                Chamber of Commerce
-            </p>
+        <p>
+            Chamber of Commerce
+        </p>
 
-        </section>
-
-
-        <section class="footer-column">
-
-            <h2>
-                Contact
-            </h2>
-
-            <p>
-                Oaxaca de Juárez, Oaxaca
-            </p>
-
-            <p>
-                Mexico, C.P. 68000
-            </p>
-
-        </section>
+    </section>
 
 
-        <section class="footer-column">
+    <section class="footer-column">
 
-            <h2>
-                Development
-            </h2>
+        <h2>
+            Contact
+        </h2>
 
-            <p>
-                WDD 231
-            </p>
+        <p>
+            Oaxaca de Juárez, Oaxaca
+        </p>
 
-            <p>
-                © <span id="currentyear"></span>
-            </p>
+        <p>
+            Mexico, C.P. 68000
+        </p>
 
-            <p>
-                Last Modification:
-            </p>
+    </section>
 
-            <p id="lastmodified">
-                Loading...
-            </p>
 
-        </section>
+    <section class="footer-column">
 
-    </div>
+        <h2>
+            Development
+        </h2>
+
+        <p>
+            WDD 231
+        </p>
+
+        <p>
+            © <span id="currentyear"></span>
+        </p>
+
+        <p>
+            Last Modification:
+        </p>
+
+        <p id="lastmodified">
+            Loading...
+        </p>
+
+    </section>
+
+</div>
+```
 
 </footer>
-
 
 <script src="scripts/main.js"></script>
 
 </body>
 </html>
+<script src="scripts/main.js"></script>
+<script src="scripts/join.js"></script>
