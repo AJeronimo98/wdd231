@@ -100,3 +100,26 @@
         padding-right: 0;
     }
 }
+/* Join page - larger screens */
+
+.join-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.membership-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.membership-option {
+    width: 100%;
+}
+
+dialog {
+    width: 80%;
+    max-width: 600px;
+}
