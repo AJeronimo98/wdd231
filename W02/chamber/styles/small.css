@@ -633,3 +633,76 @@ footer {
     padding: 2rem;
     color: var(--gray);
 }
+/* Join page */
+
+.join-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.join-form {
+    width: 100%;
+}
+
+.membership-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.membership-option {
+    padding: 1.5rem;
+    border-radius: 8px;
+    animation: cardAppear 0.8s ease both;
+}
+
+.membership-option:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.membership-option:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.membership-option:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.membership-option:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-option a {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+dialog {
+    max-width: 500px;
+    padding: 2rem;
+    border: none;
+    border-radius: 10px;
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 60%);
+}
+
+.close-modal {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
