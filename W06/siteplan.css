@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+font-family: "Lato", sans-serif;
+background-color: #F7F3E8;
+color: #263238;
+line-height: 1.6;
+}
+
+header {
+background-color: #3D6B8F;
+color: #F7F3E8;
+text-align: center;
+padding: 3rem 1rem;
+border-bottom: 8px solid #A8C3A0;
+}
+
+header h1 {
+font-family: "Playfair Display", serif;
+font-size: 2.8rem;
+margin-bottom: 0.5rem;
+}
+
+header p {
+font-size: 1.2rem;
+}
+
+main {
+width: 90%;
+max-width: 1000px;
+margin: 2rem auto;
+}
+
+section {
+background-color: #ffffff;
+margin-bottom: 2rem;
+padding: 2rem;
+border-left: 6px solid #A8C3A0;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(38, 50, 56, 0.08);
+}
+
+h2 {
+font-family: "Playfair Display", serif;
+color: #3D6B8F;
+font-size: 2rem;
+margin-bottom: 1rem;
+border-bottom: 2px solid #A8C3A0;
+padding-bottom: 0.5rem;
+}
+
+h3 {
+font-family: "Playfair Display", serif;
+color: #3D6B8F;
+margin-bottom: 0.5rem;
+}
+
+p {
+margin-bottom: 1rem;
+}
+
+.scenario {
+background-color: #F7F3E8;
+border-left: 4px solid #A8C3A0;
+padding: 1rem;
+margin: 1rem 0;
+border-radius: 5px;
+}
+
+.color-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+
+.color-card {
+padding: 1rem;
+border: 2px solid #A8C3A0;
+border-radius: 8px;
+background-color: #F7F3E8;
+}
+
+.color-sample {
+width: 100%;
+height: 70px;
+border-radius: 5px;
+margin-bottom: 1rem;
+border: 1px solid #263238;
+}
+
+.green .color-sample {
+background-color: #A8C3A0;
+}
+
+.blue .color-sample {
+background-color: #3D6B8F;
+}
+
+.cream .color-sample {
+background-color: #F7F3E8;
+}
+
+.dark .color-sample {
+background-color: #263238;
+}
+
+.type-example {
+margin: 1.5rem 0;
+padding: 1.5rem;
+background-color: #F7F3E8;
+border-radius: 8px;
+}
+
+.playfair {
+font-family: "Playfair Display", serif;
+font-size: 1.8rem;
+}
+
+.lato {
+font-family: "Lato", sans-serif;
+font-size: 1.8rem;
+}
+
+.wireframe-placeholder {
+border: 3px dashed #3D6B8F;
+background-color: #F7F3E8;
+min-height: 180px;
+margin: 1.5rem 0;
+padding: 2rem;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+footer {
+background-color: #263238;
+color: #F7F3E8;
+text-align: center;
+padding: 2rem 1rem;
+margin-top: 2rem;
+}
+
+footer p {
+margin-bottom: 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+header h1 {
+font-size: 2.2rem;
+}
+
+main {
+    width: 95%;
+}
+
+section {
+    padding: 1.3rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+.color-grid {
+    grid-template-columns: 1fr;
+}
+
+}
