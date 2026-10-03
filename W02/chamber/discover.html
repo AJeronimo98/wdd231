@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -34,172 +33,184 @@
         rel="stylesheet"
         href="styles/larger.css">
 
-    <title>
-        Oaxaca de Juárez Chamber | Discover
-    </title>
-
+    <title>Oaxaca de Juárez Chamber | Discover</title>
 </head>
-
 
 <body>
 
-<header>
+    <header>
 
-    <div class="header-container">
+        <div class="header-container">
 
-        <a
-            class="brand"
-            href="index.html">
+            <a
+                class="brand"
+                href="index.html">
 
-            <img
-                src="images/favicon.svg"
-                alt="Oaxaca Chamber logo">
+                <img
+                    src="images/favicon.svg"
+                    alt="Oaxaca Chamber logo">
 
-            <div class="brand-text">
+                <div class="brand-text">
 
-                <span class="site-name">
+                    <span class="site-name">
+                        Oaxaca de Juárez
+                    </span>
+
+                    <span class="site-subtitle">
+                        Chamber of Commerce
+                    </span>
+
+                </div>
+
+            </a>
+
+            <button
+                id="menu-button"
+                class="menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+        <nav
+            id="navigation"
+            class="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="discover.html"
+                class="active">
+                Discover
+            </a>
+
+            <a href="directory.html">
+                Directory
+            </a>
+
+            <a href="join.html">
+                Join
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-heading">
+
+            <p class="eyebrow">
+                EXPLORE OAXACA
+            </p>
+
+            <h1>
+                Discover Oaxaca de Juárez
+            </h1>
+
+            <p>
+                Explore the culture, businesses, traditions,
+                and experiences that make Oaxaca special.
+            </p>
+
+        </section>
+
+
+        <div
+            id="visit-message"
+            class="visit-message"
+            role="status"
+            aria-live="polite">
+        </div>
+
+
+        <section
+            id="discover-grid"
+            class="discover-grid"
+            aria-label="Places of interest in Oaxaca de Juárez">
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-container">
+
+            <section class="footer-column">
+
+                <h2>
                     Oaxaca de Juárez
-                </span>
+                </h2>
 
-                <span class="site-subtitle">
+                <p>
                     Chamber of Commerce
-                </span>
+                </p>
 
-            </div>
-
-        </a>
+            </section>
 
 
-        <button
-            id="menu-button"
-            class="menu-button"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
+            <section class="footer-column">
 
-            ☰
+                <h2>
+                    Contact
+                </h2>
 
-        </button>
+                <p>
+                    Oaxaca de Juárez, Oaxaca
+                </p>
 
-    </div>
+                <p>
+                    Mexico, C.P. 68000
+                </p>
 
-
-    <nav
-        id="navigation"
-        class="navigation">
-
-        <a href="index.html">Home</a>
-
-        <a
-            href="discover.html"
-            class="active">
-            Discover
-        </a>
-
-        <a href="directory.html">Directory</a>
-
-        <a href="join.html">Join</a>
-
-    </nav>
-
-</header>
+            </section>
 
 
-<main>
+            <section class="footer-column">
 
-    <section class="page-heading">
+                <h2>
+                    Development
+                </h2>
 
-        <p class="eyebrow">
-            EXPLORE OAXACA
-        </p>
+                <p>
+                    WDD 231
+                </p>
 
-        <h1>
-            Discover Oaxaca de Juárez
-        </h1>
+                <p>
+                    © <span id="currentyear"></span>
+                </p>
 
-        <p>
-            Explore the culture, businesses, traditions,
-            and experiences that make Oaxaca special.
-        </p>
+                <p>
+                    Last Modification:
+                </p>
 
-    </section>
+                <p id="lastmodified">
+                    Loading...
+                </p>
 
+            </section>
 
-    <section
-    id="discover-grid"
-    class="discover-grid"
-    aria-label="Places of interest in Oaxaca de Juárez">
-    
- </section>
+        </div>
 
-</main>
-
-
-<footer>
-
-    <div class="footer-container">
-
-        <section class="footer-column">
-
-            <h2>
-                Oaxaca de Juárez
-            </h2>
-
-            <p>
-                Chamber of Commerce
-            </p>
-
-        </section>
+    </footer>
 
 
-        <section class="footer-column">
+    <script src="scripts/main.js"></script>
 
-            <h2>
-                Contact
-            </h2>
-
-            <p>
-                Oaxaca de Juárez, Oaxaca
-            </p>
-
-            <p>
-                Mexico, C.P. 68000
-            </p>
-
-        </section>
-
-
-        <section class="footer-column">
-
-            <h2>
-                Development
-            </h2>
-
-            <p>
-                WDD 231
-            </p>
-
-            <p>
-                © <span id="currentyear"></span>
-            </p>
-
-            <p>
-                Last Modification:
-            </p>
-
-            <p id="lastmodified">
-                Loading...
-            </p>
-
-        </section>
-
-    </div>
-
-</footer>
-
-
-<script src="scripts/main.js"></script>
-<script type="module" src="scripts/discover.js"></script>
+    <script
+        type="module"
+        src="scripts/discover.js">
+    </script>
 
 </body>
+
 </html>
