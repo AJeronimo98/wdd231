@@ -123,3 +123,66 @@ dialog {
     width: 80%;
     max-width: 600px;
 }
+/* =========================
+   DISCOVER PAGE - MEDIUM
+   ========================= */
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+
+    .discover-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+            "one one"
+            "two three"
+            "four four"
+            "five six"
+            "seven eight";
+    }
+
+    .discover-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .discover-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .discover-card img {
+        transition: transform 0.3s ease;
+    }
+}
+
+
+/* =========================
+   DISCOVER PAGE - LARGE
+   ========================= */
+
+@media screen and (min-width: 1025px) {
+
+    .discover-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        grid-template-areas:
+            "one one two three"
+            "one one four four"
+            "five six four four"
+            "seven seven eight eight";
+    }
+
+    .discover-card:hover {
+        transform: translateY(-6px);
+
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .discover-card:hover img {
+        transform: scale(1.06);
+    }
+
+    .discover-card img {
+        transition: transform 0.3s ease;
+    }
+}
