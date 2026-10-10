@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Mole Negro Oaxaqueño",
+        "category": "platos",
+        "price": 140.00,
+        "description": "El rey de los moles, preparado con chiles secos, chocolate de metate y especias aromáticas, acompañado de pollo y arroz.",
+        "image": "images/mole-negro.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Tlayuda Tradicional",
+        "category": "platos",
+        "price": 120.00,
+        "description": "Tortilla gigante crujiente untada con asiento, frijoles negros refritos, quesillo fundido y tasajo o cecina.",
+        "image": "images/tlayuda.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Memelas Oaxaqueñas (Orden de 3)",
+        "category": "antojitos",
+        "price": 75.00,
+        "description": "Masa gruesa de maíz con asiento, salsa roja o verde y abundante queso fresco, tostadas al comal.",
+        "image": "images/memelas.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Enfrijoladas Oaxaqueñas",
+        "category": "antojitos",
+        "price": 90.00,
+        "description": "Tortillas bañadas en salsa de frijol con hoja de aguacate, rellenas de pollo deshebrado y queso fresco.",
+        "image": "images/enfrijoladas.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Caldo de Piedra",
+        "category": "platos",
+        "price": 160.00,
+        "description": "Caldo tradicional de la Cuenca con pescado, camarón, chile zepahua y piedras calientes al rojo vivo.",
+        "image": "images/caldo-piedra.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Tasajo Asado con Guarnición",
+        "category": "platos",
+        "price": 130.00,
+        "description": "Fino corte de carne de res salada y oreada al sol, acompañada de frijoles de la olla, nopales y guacamole.",
+        "image": "images/tasajo.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Cecina Enchilada",
+        "category": "platos",
+        "price": 130.00,
+        "description": "Carne de cerdo marinada en adobo de chile seco, asada a la perfección y servida con guarnición tradicional.",
+        "image": "images/cecina.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Garnachas Istmeñas (Orden de 5)",
+        "category": "antojitos",
+        "price": 85.00,
+        "description": "Pequeñas tortillas fritas con carne deshebrada, cebolla curtida en vinagre y queso espolvoreado estilo Istmo.",
+        "image": "images/garnachas.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Empanadas de Amarillo",
+        "category": "antojitos",
+        "price": 65.00,
+        "description": "Tortilla grande doblada rellena de mole amarillo, pollo deshebrado y chepil fresco.",
+        "image": "images/empanadas.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Tamales en Hoja de Plátano",
+        "category": "antojitos",
+        "price": 45.00,
+        "description": "Tradicional tamal envuelto en hoja de plátano relleno de mole negro y carne de puerco.",
+        "image": "images/tamales.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Tejate Tradicional (Vaso)",
+        "category": "bebidas",
+        "price": 35.00,
+        "description": "La bebida de los dioses elaborada a base de maíz, cacao, hueso de mamey y rosita de cacao.",
+        "image": "images/tejate.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Agua de Horchata con Tuna",
+        "category": "bebidas",
+        "price": 40.00,
+        "description": "Agua fresca de arroz con almendras, coronada con un toque de melón, nuez y nieve de tuna roja.",
+        "image": "images/horchata.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Chocolate de Metate Caliente",
+        "category": "bebidas",
+        "price": 40.00,
+        "description": "Exquisito chocolate artesanal oaxaqueño preparado con leche o agua, batido con molinillo.",
+        "image": "images/chocolate.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Nicuatole Tradicional",
+        "category": "antojitos",
+        "price": 30.00,
+        "description": "Postre gelatinoso a base de maíz criollo, azúcar, canela y un toque de vainilla.",
+        "image": "images/nicuatole.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Pan de Yema con Chocolate",
+        "category": "antojitos",
+        "price": 50.00,
+        "description": "Tradicional pan dulce artesanal de yema de huevo, ideal para chopear en una taza de chocolate.",
+        "image": "images/pan-yema.jpg"
+    }
+]

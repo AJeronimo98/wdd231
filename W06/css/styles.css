@@ -1,0 +1,430 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ================================---------- */
+:root {
+    --bg-cream: #FAF6ED;          
+    --text-dark: #2C2A29;        
+    --primary-blue: #4B88A2;      
+    --primary-pistachio: #84B563;
+    --accent-terracotta: #D87A43; 
+    --white: #FFFFFF;
+    --shadow: 0 4px 12px rgba(44, 42, 41, 0.08);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN (WAYFINDING & HAMBURGUESA)
+   ================================---------- */
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* Oculto en pantallas grandes */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 3px solid var(--primary-pistachio);
+}
+
+/* ==========================================
+   ESTRUCTURA PRINCIPAL Y CONTENEDORES
+   ================================---------- */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+section {
+    background-color: var(--white);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 6px solid var(--primary-pistachio);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-blue);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #4A4543;
+}
+
+/* Botones principales con toque oaxaqueño */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-terracotta);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #c06734;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--primary-pistachio);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #729d53;
+}
+
+/* ==========================================
+   HERO & HOME SECTIONS
+   ================================---------- */
+.hero-section {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(75, 136, 162, 0.1), rgba(132, 181, 99, 0.1));
+    border-top: 6px solid var(--primary-blue);
+}
+
+.hero-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.popular-grid, .menu-grid, .info-grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.popular-card, .menu-card, .info-card {
+    background-color: var(--bg-cream);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #e3dcd0;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.popular-card:hover, .menu-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-pistachio);
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-terracotta);
+    margin: 0.5rem 0;
+}
+
+/* ==========================================
+   FILTROS Y MENÚ DINÁMICO
+   ================================---------- */
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.filter-btn {
+    background-color: var(--bg-cream);
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.badge-category {
+    display: inline-block;
+    background-color: var(--primary-pistachio);
+    color: var(--text-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-details {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-details:hover {
+    background-color: #3b6e83;
+}
+
+.btn-favorite {
+    background-color: #f0e6d2;
+    color: var(--text-dark);
+}
+
+.btn-favorite:hover {
+    background-color: #e2d2b5;
+}
+
+/* ==========================================
+   FORMULARIO Y TABLAS / RESUMEN
+   ================================---------- */
+.order-form fieldset {
+    border: 2px solid #e3dcd0;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-cream);
+}
+
+.order-form legend {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-blue);
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-pistachio);
+    box-shadow: 0 0 5px rgba(132, 181, 99, 0.4);
+}
+
+.order-summary-box {
+    background-color: var(--bg-cream);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 6px solid var(--accent-terracotta);
+}
+
+/* ==========================================
+   MODAL DIALOG
+   ================================---------- */
+dialog.modal {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background-color: var(--white);
+}
+
+dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    padding: 2rem;
+    position: relative;
+}
+
+#close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* ==========================================
+   PIE DE PÁGINA (FOOTER)
+   ================================---------- */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: auto;
+}
+
+footer p {
+    color: #d1c7bd;
+    margin-bottom: 0.4rem;
+}
+
+footer a {
+    color: var(--primary-pistachio);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (MOBILE VIEW)
+   ================================---------- */
+@media screen and (max-width: 768px) {
+    #menu-button {
+        display: block; /* Muestra el botón hamburguesa */
+    }
+
+    nav {
+        display: none; /* Oculta el menú por defecto en móviles */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    nav.open {
+        display: block; /* Se muestra al hacer clic en el botón */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+    }
+
+    nav li {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}

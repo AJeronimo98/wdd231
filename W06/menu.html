@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Sazón Oaxaqueño</title>
+    <meta name="description" content="Explora nuestro menú completo de platillos oaxaqueños con más de 15 opciones tradicionales, precios y descripciones detalladas.">
+    <meta name="author" content="Angel Geronimo">
+    
+    <meta property="og:title" content="Menú - Sazón Oaxaqueño">
+    <meta property="og:description" content="Descubre nuestra amplia variedad de antojitos, moles y bebidas tradicionales de Oaxaca.">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Sazón Oaxaqueño</h1>
+            <button id="menu-button" aria-label="Abrir menú de navegación">&#9776;</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html" class="active">Menú</a></li>
+                    <li><a href="order.html">Pedido</a></li>
+                    <li><a href="attributions.html">Atribuciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu-intro">
+            <h2>Nuestro Menú Tradicional</h2>
+            <p>Conoce la selección completa de nuestros platillos preparados artesanalmente. Usa los filtros para encontrar tu especialidad favorita.</p>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="platos">Platos Fuertes</button>
+                <button class="filter-btn" data-filter="antojitos">Antojitos</button>
+                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            </div>
+        </section>
+
+        <!-- Contenedor donde JavaScript cargará dinámicamente los 15+ elementos con sus 4 propiedades -->
+        <section id="menu-container" class="menu-grid">
+            <!-- Cargado vía JavaScript / Fetch API -->
+        </section>
+    </main>
+
+    <!-- Diálogo Modal requerido por la rúbrica -->
+    <dialog id="item-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal" aria-label="Cerrar modal">&times;</button>
+            <div id="modal-body">
+                <!-- Contenido dinámico del modal -->
+            </div>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>&copy; 2026 Sazón Oaxaqueño | Angel Geronimo</p>
+        <p>WDD231 - Web Frontend Development Project</p>
+        <p><a href="https://www.youtube.com/watch?v=tu-video-demostracion" target="_blank" rel="noopener">Video de Demostración del Proyecto</a> | <a href="attributions.html">Atribuciones</a></p>
+    </footer>
+
+    <script src="js/menu-main.js" type="module"></script>
+</body>
+</html>

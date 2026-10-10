@@ -1,191 +1,95 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website plan for Sazón Oaxaqueño, a local food ordering and delivery platform.">
-    <meta name="author" content="AJeronimo98">
-
-```
-<title>Sazón Oaxaqueño | Website Plan</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="siteplan.css">
-```
-
+    <title>Sazón Oaxaqueño | Inicio</title>
+    <meta name="description" content="Disfruta de la auténtica comida tradicional oaxaqueña con servicio a domicilio rápido y seguro en Sazón Oaxaqueño.">
+    <meta name="author" content="Angel Geronimo">
+    
+    <!-- Open Graph Social Tags -->
+    <meta property="og:title" content="Sazón Oaxaqueño - Comida Tradicional a Domicilio">
+    <meta property="og:description" content="Explora los mejores platillos tradicionales de Oaxaca y ordénalos directamente en línea.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/wireframe-desktop.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <header>
-        <h1>Sazón Oaxaqueño</h1>
-        <p>Website Plan</p>
+        <div class="header-container">
+            <h1>Sazón Oaxaqueño</h1>
+            <button id="menu-button" aria-label="Abrir menú de navegación">&#9776;</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="order.html">Pedido</a></li>
+                    <li><a href="attributions.html">Atribuciones</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-```
-<main>
-    <section>
-        <h2>Site Name</h2>
-        <h3>Sazón Oaxaqueño</h3>
-        <p>
-            The name "Sazón Oaxaqueño" was selected because it represents
-            the food and local identity of the business. The name communicates
-            the idea of authentic Oaxacan flavor while being simple and easy
-            for customers to remember.
-        </p>
-    </section>
+    <main>
+        <section class="hero-section">
+            <h2>Bienvenido a Sazón Oaxaqueño</h2>
+            <p>Llevamos el auténtico sabor de Oaxaca hasta la puerta de tu hogar. Disfruta de recetas tradicionales preparadas con ingredientes frescos y locales.</p>
+            <a href="menu.html" class="btn-primary">Ver Menú Completo</a>
+        </section>
 
-    <section>
-        <h2>Site Purpose</h2>
-        <p>
-            Sazón Oaxaqueño will provide an online ordering and local delivery
-            platform for a food business. The website will allow customers to
-            learn about the business, explore available menu items, view
-            prices and descriptions, add food to a virtual cart, complete
-            checkout, and track their delivery.
-        </p>
-
-        <p>
-            The site will include information about delivery areas, business
-            hours, featured promotions, popular menu items, and the ordering
-            process.
-        </p>
-    </section>
-
-    <section>
-        <h2>Scenarios</h2>
-
-        <div class="scenario">
-            <h3>Scenario 1</h3>
-            <p>
-                What food items are available and how much does each item cost?
-            </p>
-        </div>
-
-        <div class="scenario">
-            <h3>Scenario 2</h3>
-            <p>
-                Does Sazón Oaxaqueño deliver to my area and how long will
-                my order take to arrive?
-            </p>
-        </div>
-
-        <div class="scenario">
-            <h3>Scenario 3</h3>
-            <p>
-                How can I place an order and check the status of my delivery?
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Color Scheme</h2>
-
-        <p>
-            The color scheme uses warm and natural colors inspired by food,
-            freshness, and the identity of Oaxaca. The main colors are
-            pastel green and blue, supported by a warm cream background
-            and dark text.
-        </p>
-
-        <div class="color-grid">
-            <div class="color-card green">
-                <div class="color-sample"></div>
-                <h3>Pastel Green</h3>
-                <p>#A8C3A0</p>
-                <p>
-                    Used for accents, section highlights, borders, and
-                    supporting visual elements.
-                </p>
+        <section class="highlights-section">
+            <h2>Platillos Populares</h2>
+            <div class="popular-grid">
+                <article class="popular-card">
+                    <h3>Mole Negro Oaxaqueño</h3>
+                    <p>El rey de los moles, preparado con chiles secos, chocolate de metate y especias aromáticas.</p>
+                    <span class="price">$140.00 MXN</span>
+                </article>
+                <article class="popular-card">
+                    <h3>Tlayuda Tradicional</h3>
+                    <p>Tortilla gigante crujiente untada con asiento, frijoles negros, quesillo y tasajo o cecina.</p>
+                    <span class="price">$120.00 MXN</span>
+                </article>
+                <article class="popular-card">
+                    <h3>Memelas Oaxaqueñas</h3>
+                    <p>Masa gruesa de maíz con asiento, salsa y queso fresco, tostada al comal.</p>
+                    <span class="price">$25.00 MXN c/u</span>
+                </article>
             </div>
+        </section>
 
-            <div class="color-card blue">
-                <div class="color-sample"></div>
-                <h3>Blue</h3>
-                <p>#3D6B8F</p>
-                <p>
-                    Used for headings, buttons, links, and important
-                    interactive elements.
-                </p>
+        <section class="info-grid-section">
+            <div class="info-card">
+                <h2>Áreas de Entrega</h2>
+                <p>Cubrimos toda la zona metropolitana de Oaxaca de Juárez, incluyendo Centro Histórico, San Jacinto Amilpas, Xoxocotlán y Santa Lucía del Camino.</p>
             </div>
-
-            <div class="color-card cream">
-                <div class="color-sample"></div>
-                <h3>Warm Cream</h3>
-                <p>#F7F3E8</p>
-                <p>
-                    Used as the main page background to create a warm
-                    and comfortable appearance.
-                </p>
+            <div class="info-card">
+                <h2>Horarios de Atención</h2>
+                <p>Lunes a Domingo: 12:00 PM – 12:00 AM. Entregas a domicilio rápidas y seguras garantizadas.</p>
             </div>
-
-            <div class="color-card dark">
-                <div class="color-sample"></div>
-                <h3>Dark Text</h3>
-                <p>#263238</p>
-                <p>
-                    Used for paragraphs and other primary text to maintain
-                    readability.
-                </p>
+            <div class="info-card">
+                <h2>Promociones Especiales</h2>
+                <p>¡Aprovecha el 15% de descuento en tu primer pedido en línea usando el código <strong>SAZON2026</strong> al finalizar tu compra!</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section>
-        <h2>Typography</h2>
+    <footer>
+        <p>&copy; 2026 Sazón Oaxaqueño | Angel Geronimo</p>
+        <p>WDD231 - Web Frontend Development Project</p>
+        <p><a href="https://www.youtube.com/watch?v=tu-video-demostracion" target="_blank" rel="noopener">Video de Demostración del Proyecto</a> | <a href="attributions.html">Atribuciones</a></p>
+    </footer>
 
-        <div class="type-example">
-            <h3 class="playfair">Playfair Display</h3>
-            <p>
-                This font will be used for the main site title, section
-                headings, and other important titles. It provides an
-                elegant and distinctive appearance.
-            </p>
-        </div>
-
-        <div class="type-example">
-            <h3 class="lato">Lato</h3>
-            <p>
-                This font will be used for body text, menu descriptions,
-                prices, buttons, navigation, and other general content.
-                It provides a clean and readable appearance.
-            </p>
-        </div>
-    </section>
-
-    <section>
-    <h2>Wireframe</h2>
-
-    <p>
-        The wireframes show the structure and layout of the
-        Sazón Oaxaqueño home page for both a small mobile viewport
-        and a larger desktop or tablet viewport.
-    </p>
-
-    <div class="wireframe">
-        <h3>Small Viewport — Mobile</h3>
-        <img 
-            src="images/wireframe-mobile.jpeg" 
-            alt="Hand-drawn mobile wireframe for Sazón Oaxaqueño">
-    </div>
-
-    <div class="wireframe">
-        <h3>Large Viewport — Desktop / Tablet</h3>
-        <img 
-            src="images/wireframe-desktop.jpeg" 
-            alt="Hand-drawn desktop wireframe for Sazón Oaxaqueño">
-    </div>
-</section>
-</main>
-
-<footer>
-    <p>&copy; 2026 Sazón Oaxaqueño | Website Plan</p>
-    <p>WDD231 - Web Frontend Development</p>
-</footer>
-```
-
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
